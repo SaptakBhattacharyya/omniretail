@@ -42,4 +42,12 @@ app.get('/v1/health', (req, res) => {
 app.use('/api/v1/users', userRoutes);
 app.use('/v1/users', userRoutes);
 
+import dashboardRoutes from './routes/dashboard.routes.js';
+import negotiationRoutes from './routes/negotiation.routes.js';
+
+app.use('/api/v1/dashboard', dashboardRoutes);
+app.use('/v1/dashboard', dashboardRoutes);
+app.use('/api/v1/negotiations', negotiationRoutes);
+app.use('/v1/negotiations', negotiationRoutes);
+
 export default app;

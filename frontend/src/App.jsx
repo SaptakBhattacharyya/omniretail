@@ -4,37 +4,24 @@ import { logout } from './store/slices/authSlice';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import Sidebar from './components/layout/Sidebar';
+import Header from './components/layout/Header';
+import Home from './pages/Home';
 import './index.css';
 
-// Minimal Dashboard Component for PR 1
-const Dashboard = () => {
-  const { user } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate('/login');
-  };
-
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#131315] text-white p-8">
-      <div className="bg-[#201f22] border border-[#414751] rounded-2xl p-12 shadow-2xl text-center max-w-lg w-full">
-        <h1 className="text-4xl font-black mb-4 font-manrope">Dashboard</h1>
-        <p className="text-[#c1c7d3] mb-8 font-inter">
-          Welcome, <span className="text-blue-400 font-bold">{user?.name}</span>! <br/>
-          You have successfully logged in to the OmniRetail Portal.
-        </p>
-        <button
-          onClick={handleLogout}
-          className="px-8 py-3 bg-red-500/10 border border-red-500/20 text-red-400 font-semibold rounded-xl hover:bg-red-500/20 transition-all"
-        >
-          Logout
-        </button>
-      </div>
+// Dashboard Layout Wrapper
+const DashboardLayout = ({ children }) => (
+  <div className="flex min-h-screen bg-[#131315]">
+    <Sidebar />
+    <div className="flex-1 flex flex-col md:ml-64 w-full h-screen overflow-y-auto relative">
+      <div className="fixed top-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none"></div>
+      <Header />
+      <main className="p-8 pb-20 relative z-10 flex-1 flex flex-col gap-6 max-w-[1600px] mx-auto w-full">
+        {children}
+      </main>
     </div>
-  );
-};
+  </div>
+);
 
 function App() {
   return (
@@ -49,7 +36,9 @@ function App() {
           path="/" 
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <DashboardLayout>
+                <Home />
+              </DashboardLayout>
             </ProtectedRoute>
           } 
         />
