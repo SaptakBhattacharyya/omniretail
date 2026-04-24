@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #131315;
+  --color-primary: #a4c9ff;
+  --color-secondary: #4edea3;
+  --color-background: #131315;
+  --color-surface-dim: #131315;
+  --color-surface-bright: #39393b;
+  --color-on-surface: #e5e1e4;
+  --color-on-surface-variant: #c1c7d3;
+  --color-outline: #8b919d;
+  --color-outline-variant: #414751;
+  --color-primary-container: #60a5fa;
+  --color-on-primary-container: #003a6b;
+  --color-secondary-container: #00a572;
+  --color-on-secondary-container: #00311f;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  
+  --font-manrope: "Manrope", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  
+  --spacing-base: 4px;
+  --spacing-container-margin: 32px;
+  --spacing-card-padding: 24px;
+  --spacing-gutter: 16px;
+  --spacing-stack-gap: 12px;
+  
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-inter antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-manrope;
+  }
+}
+
+.inner-glow {
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Hide scrollbar completely (used on auth pages) */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Thin dark scrollbar for dashboard panels */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #353437;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #414751;
+}
