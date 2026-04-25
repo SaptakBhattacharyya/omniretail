@@ -146,7 +146,7 @@ const Inventory = () => {
       navigate(`/negotiation/${neg._id}`);
     } catch (error) {
       console.error('Error starting negotiation:', error);
-      alert('Failed to start negotiation.');
+      alert(`Failed to start negotiation: ${error.message || 'Unknown error'}`);
     }
   };
 

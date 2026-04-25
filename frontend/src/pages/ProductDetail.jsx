@@ -35,7 +35,7 @@ const ProductDetail = () => {
       navigate(`/negotiation/${neg._id}`);
     } catch (err) {
       console.error('Negotiation start error:', err);
-      alert('Failed to start negotiation. Please try again.');
+      alert(`Failed to start negotiation: ${err.message || 'Unknown error'}`);
     } finally {
       setIsNegotiating(false);
     }

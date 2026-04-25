@@ -47,7 +47,10 @@ export const createNegotiation = async (req, res) => {
     res.status(201).json(negotiation);
   } catch (error) {
     console.error('Create negotiation error:', error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ 
+      message: 'Server error while creating negotiation', 
+      error: error.message 
+    });
   }
 };
 
