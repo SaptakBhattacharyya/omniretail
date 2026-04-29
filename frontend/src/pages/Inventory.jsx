@@ -356,7 +356,7 @@ const Inventory = () => {
 
                   <div className="flex items-center justify-between mt-auto">
                     <span className="font-manrope text-[22px] font-extrabold text-on-surface">
-                      ${product.basePrice.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                      ₹{product.basePrice.toLocaleString('en-IN')}
                     </span>
                     <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${sc.bg} ${sc.border}`}>
                       <span className={`w-1.5 h-1.5 rounded-full ${sc.dot}`} />
@@ -460,7 +460,7 @@ const Inventory = () => {
 
                   {/* Price */}
                   <span className="font-manrope text-base font-bold text-on-surface">
-                    ${product.basePrice.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                    ₹{product.basePrice.toLocaleString('en-IN')}
                   </span>
 
                   {/* Stock */}
@@ -532,7 +532,7 @@ const Inventory = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs text-zinc-400 font-semibold uppercase mb-1 block">Base Price ($)</label>
+                  <label className="text-xs text-zinc-400 font-semibold uppercase mb-1 block">Base Price (₹)</label>
                   <input required type="number" value={formData.basePrice} onChange={(e)=>setFormData({...formData, basePrice: e.target.value})} className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-2.5 text-white focus:outline-none focus:border-primary-container" />
                 </div>
                 <div>
