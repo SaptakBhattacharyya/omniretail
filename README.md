@@ -10,7 +10,8 @@
 [![Status](https://img.shields.io/badge/Status-Development-orange?style=for-the-badge)]()
 
 OmniRetail is a cutting-edge **Phygital (Physical + Digital)** commerce platform designed to bridge the gap between offline inventory uncertainty and online pricing rigidity. By unifying real-time physical store inventory visibility with an AI-powered price negotiation engine, OmniRetail empowers both consumers and retailers.
-
+deployment link : https://omniretail-two.vercel.app/
+documentation link : https://documenter.getpostman.com/view/50841251/2sBXqJLLqV
 ---
 
 ## 🚀 Key Value Propositions
